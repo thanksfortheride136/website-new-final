@@ -1,0 +1,152 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Dark Theme Colors */
+  :root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #ff9800;
+    --nav-bg: #181818;
+  
+    /* Different section backgrounds */
+    --section1-bg: #1e1e1e;
+    --section2-bg: #2a2a2a;
+    --section3-bg: #333333;
+  }
+  
+  /* Body Background & Text */
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* ===== NAVBAR ===== */
+  nav {
+    background: var(--nav-bg);
+    width: 100%;
+    /* The padding below ensures minimal space on each side */
+    padding: 15px 20px; 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  
+    /* Flex to place logo on the left, links on the right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* LOGO on the Left */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keep "TUCKAHOE" block left-aligned */
+    text-align: center;      /* But center the text under itself */
+  }
+  
+  /* "TUCKAHOE" Styling */
+  .logo h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+  }
+  
+  /* Divider (Line Under TUCKAHOE) */
+  .divider {
+    width: 100%;
+    max-width: 140px; /* Adjust to match "TUCKAHOE" width */
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 3px;
+  }
+  
+  /* "Technology" Text */
+  .logo p {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 0;
+  }
+  
+  /* NAV LINKS on the Right */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links span {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ===== SECTIONS ===== */
+  section {
+    width: 100%;
+    min-height: 600px; /* Default desktop height */
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  #section1 {
+    background: var(--section1-bg);
+  }
+  
+  #section2 {
+    background: var(--section2-bg);
+  }
+  
+  #section3 {
+    background: var(--section3-bg);
+  }
+  
+  .content {
+    /* If you want the text centered in a narrower column, use a max-width */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--nav-bg);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* ===== RESPONSIVE DESIGN (MOBILE VIEW) ===== */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 10px 20px; /* Slightly adjust for mobile */
+    }
+  
+    .logo {
+      align-items: center;
+      margin-bottom: 10px;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    section {
+      min-height: 400px;
+      padding: 50px 15px;
+    }
+  }
+  
