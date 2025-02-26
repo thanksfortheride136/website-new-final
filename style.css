@@ -1,152 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Open+Sans:wght@300&display=swap');
+
 /* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-  }
-  
-  /* Dark Theme Colors */
-  :root {
+}
+
+/* Dark Theme Colors */
+:root {
     --bg-color: #121212;
     --text-color: #ffffff;
     --accent-color: #ff9800;
     --nav-bg: #181818;
-  
+
     /* Different section backgrounds */
     --section1-bg: #1e1e1e;
     --section2-bg: #2a2a2a;
     --section3-bg: #333333;
-  }
-  
-  /* Body Background & Text */
-  body {
+}
+
+/* Body Background & Text */
+body {
     background: var(--bg-color);
     color: var(--text-color);
-  }
-  
-  /* ===== NAVBAR ===== */
-  nav {
+}
+
+/* ===== NAVBAR ===== */
+nav {
     background: var(--nav-bg);
     width: 100%;
-    /* The padding below ensures minimal space on each side */
-    padding: 15px 20px; 
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-  
-    /* Flex to place logo on the left, links on the right */
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  /* LOGO on the Left */
-  .logo {
+}
+
+/* LOGO on the Left */
+.logo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Keep "TUCKAHOE" block left-aligned */
-    text-align: center;      /* But center the text under itself */
-  }
-  
-  /* "TUCKAHOE" Styling */
-  .logo h1 {
+    align-items: flex-start;
+    text-align: center;
+}
+
+/* "TUCKAHOE" Styling */
+.logo h1 {
     font-size: 32px;
     font-weight: bold;
     color: var(--text-color);
     letter-spacing: 2px;
     margin-bottom: 2px;
-  }
-  
-  /* Divider (Line Under TUCKAHOE) */
-  .divider {
+}
+
+/* Divider (Line Under TUCKAHOE) */
+.divider {
     width: 100%;
-    max-width: 140px; /* Adjust to match "TUCKAHOE" width */
+    max-width: 140px;
     height: 1px;
     background-color: #fff;
     margin-bottom: 3px;
-  }
-  
-  /* "Technology" Text */
-  .logo p {
+}
+
+/* "Technology" Text */
+.logo p {
     font-size: 14px;
     color: var(--text-color);
     margin-top: 0;
-  }
-  
-  /* NAV LINKS on the Right */
-  .nav-links {
+}
+
+/* NAV LINKS */
+.nav-links {
     display: flex;
     align-items: center;
     gap: 12px;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 16px;
-  }
-  
-  .nav-links span {
+}
+
+.nav-links a:hover {
+    background-color: yellow;
+    transition: 0.15s ease;
+    font-size: 18px;
+}
+
+.nav-links span {
     color: rgba(255, 255, 255, 0.4);
-  }
-  
-  /* ===== SECTIONS ===== */
-  section {
+}
+
+/* ===== SECTIONS ===== */
+section {
     width: 100%;
-    min-height: 600px; /* Default desktop height */
+    min-height: 600px;
     padding: 80px 0;
     text-align: center;
-  }
-  
-  #section1 {
+}
+
+/* Section 1 */
+#section1 {
     background: var(--section1-bg);
-  }
-  
-  #section2 {
+    background-image: url("school.jpg");
+    background-size: cover;
+    align-content: center;
+}
+
+/* ===== SECTION 2: Keep Image Large & Centered ===== */
+#section2 {
     background: var(--section2-bg);
-  }
-  
-  #section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.content-section2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px; /* Allows more space for centering */
+    width: 90%;
+    gap: 80px; /* Increased spacing between image and text */
+}
+
+/* IMAGE STYLES */
+.image-container {
+    flex: 1.5; /* Keeps the image large */
+    max-width: 100%; /* Ensures it stays wide */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures image is centered vertically */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: 750px; /* Keeps image large */
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* TEXT STYLES */
+.text-container {
+  flex: 1;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 18px; /* Slightly bigger for readability */
+  max-width: 50%; /* Increased from 35% to 50% to extend left & right */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures text is vertically centered */
+}
+
+
+#section2-text{
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ===== RESPONSIVE DESIGN: Stack on Mobile ===== */
+@media (max-width: 768px) {
+    .content-section2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container, .text-container {
+        max-width: 100%;
+    }
+
+    .text-container {
+        padding: 20px;
+    }
+}
+
+/* Section 3 */
+#section3 {
     background: var(--section3-bg);
-  }
-  
-  .content {
-    /* If you want the text centered in a narrower column, use a max-width */
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* ===== FOOTER ===== */
-  footer {
+}
+
+/* INDEX HEADING */
+#main-index-heading {
+    font-size: 70px;
+    font-family: 'Alegreya Sans SC';
+    color: black;
+}
+
+#main-index-subheading {
+    color: black;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* FOOTER */
+footer {
     background: var(--nav-bg);
     width: 100%;
     padding: 20px;
     text-align: center;
     margin-top: 20px;
-  }
-  
-  /* ===== RESPONSIVE DESIGN (MOBILE VIEW) ===== */
-  @media (max-width: 768px) {
+}
+
+/* ===== RESPONSIVE DESIGN (MOBILE VIEW) ===== */
+@media (max-width: 768px) {
     nav {
-      flex-direction: column;
-      padding: 10px 20px; /* Slightly adjust for mobile */
+        flex-direction: column;
+        padding: 10px 20px;
     }
-  
+
     .logo {
-      align-items: center;
-      margin-bottom: 10px;
+        align-items: center;
+        margin-bottom: 10px;
     }
-  
+
     .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  
+
     section {
-      min-height: 400px;
-      padding: 50px 15px;
+        min-height: 400px;
+        padding: 50px 15px;
     }
-  }
-  
+}
