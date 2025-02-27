@@ -12,7 +12,7 @@
 :root {
     --bg-color: #121212;
     --text-color: #ffffff;
-    --accent-color: #ff9800;
+    --accent-color: #ff9800; /* Used as hover color */
     --nav-bg: #181818;
 
     /* Different section backgrounds */
@@ -40,7 +40,7 @@ nav {
     align-items: center;
 }
 
-/* LOGO on the Left */
+/* Logo on the Left */
 .logo {
     display: flex;
     flex-direction: column;
@@ -84,12 +84,14 @@ nav {
     color: var(--text-color);
     text-decoration: none;
     font-size: 16px;
+    padding: 8px 12px; /* Increased padding for a bigger clickable area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: yellow;
-    transition: 0.15s ease;
-    font-size: 18px;
+    background-color: var(--accent-color);
+    color: #121212; /* Dark text on accent color for contrast */
 }
 
 .nav-links span {
@@ -134,7 +136,7 @@ section {
 /* IMAGE STYLES */
 .image-container {
     flex: 1.5; /* Keeps the image large */
-    max-width: 100%; /* Ensures it stays wide */
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center; /* Ensures image is centered vertically */
@@ -154,16 +156,15 @@ section {
   flex: 1;
   text-align: left;
   color: var(--text-color);
-  font-size: 18px; /* Slightly bigger for readability */
-  max-width: 50%; /* Increased from 35% to 50% to extend left & right */
+  font-size: 18px;
+  max-width: 50%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center; /* Ensures text is vertically centered */
 }
 
-
-#section2-text{
+#section2-text {
   color: white;
   font-family: 'Open Sans', sans-serif;
 }
@@ -211,7 +212,7 @@ footer {
     margin-top: 20px;
 }
 
-/* ===== RESPONSIVE DESIGN (MOBILE VIEW) ===== */
+/* ===== Responsive Design (Mobile) ===== */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
